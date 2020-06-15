@@ -5,24 +5,15 @@ import random
 
 r = random.randint(1, 9)
 i = int(input("Enter the no. between 0 to 10 that I'm thinking right now\n"))
-a = 10
-b = 0
-if i < r:
-    b = i
-elif i > r:
-    a = i
-else:
-    None
+a, b = 10, 0
 while True:
     if i < r:
+        b = i
         i = int(input("Enter a no. greater than %d but less than %d\n" % (i, a)))
-        if i < r:
-            b = i
     elif i > r:
+        a = i
         i = int(input("Enter a no. greater than %d but less than %d\n" % (b, i)))
-        if i > r:
-            a = i
     else:
-        print("Hurray! you guessed the no. which was no. %d\n" % r)
+        print("Hurray! you guessed the no. which was %d\n" % r)
         break
     
